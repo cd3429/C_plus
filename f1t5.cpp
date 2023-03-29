@@ -2,6 +2,7 @@
 
 #include<iostream>
 #include<string.h>
+#include<math.h>
 using namespace std ;
 
 main()
@@ -19,5 +20,8 @@ main()
 			cout<<"Squareroot of a is "<<i;
 		}
 	}
+	
+	cout<<"\nSquareroot of a is (with math.h) : "<<sqrt(a);
 		
 }
+
