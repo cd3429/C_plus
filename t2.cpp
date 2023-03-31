@@ -10,7 +10,7 @@ class car{
 		int car_release_year;
 		char car_company_name[25];
 		char car_color[25];
-		char Car Model[25];
+		char car_model[25];
 		
 	public :
 		
