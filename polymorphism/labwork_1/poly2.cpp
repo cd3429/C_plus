@@ -1,11 +1,9 @@
 /*
-
 2. WAP to implement method overriding by following
 below mentioned criteria:
 - Class Cricket -> Class T20Match
 - Class Cricket -> Class TestMatch
 - override getTotalOvers() method in both classes
-
 */
 
 #include<iostream>
@@ -14,7 +12,10 @@ using namespace std;
 class cricket{
 	public :
 		int t20_over=20,test_over=90;
-	
+		void getTotalOvers()
+		{
+		cout<<"\nCricket is very popular game among Indians.";
+		}
 };
 
 class t20 : public cricket{
@@ -25,7 +26,7 @@ class t20 : public cricket{
 		}
 };
 
-class test : public cricket{
+class test : public t20{
 	public :
 		void getTotalOvers()
 		{
@@ -35,9 +36,10 @@ class test : public cricket{
 
 int main()
 {
-	t20 t1;
-	test t2;
+
+	test t;
 	
-	t1.getTotalOvers();
-	t2.getTotalOvers();
+	t.getTotalOvers();
+	t.t20::getTotalOvers();
+	t.cricket::getTotalOvers();
 }
