@@ -84,18 +84,18 @@ class Bank {
 		}
         void deposit(float amount) {
             balance += amount;
-            cout << "$" << amount << " deposited successfully!" << endl;
+            cout << amount << " INR deposited successfully!" << endl;
         }
         void withdraw(float amount) {
             if (amount > balance) {
                 cout << "Insufficient balance. Withdrawal failed." << endl;
             } else {
                 balance -= amount;
-                cout << "$" << amount << " withdrawn successfully!" << endl;
+                cout << amount << " INR withdrawn successfully!" << endl;
             }
         }
         void display() {
-            cout << "Your current balance is $" << balance << endl;
+            cout << "Your current balance is " << balance <<"INR"<<  endl;
         }
 };
 
