@@ -5,85 +5,70 @@
 using namespace std;
 
 class Dummy {
-	
 	public :
-		
 		virtual void input()=0;
-		virtual void sum()=0;
-		
+		virtual int getValue()=0;
 };
 
 class A : public Dummy {
-	
 	public :
-	
-	int a ;
-	
-	public :
-		
-		void input()
-		{
-			cout<<"Enter the value of A : "; cin>>a;
+		int a ;
+		void input() {
+			cout<<"Enter the value of A : "; 
+			cin>>a;
 		}
-	
+		int getValue() {
+			return a;
+		}
 };
-
 
 class B : public Dummy {
-	
 	public :
-		
-	int b ;
-	
-	public :
-		
-		void input()
-		{
-			cout<<"Enter the value of B : "; cin>>b;
+		int b ;
+		void input() {
+			cout<<"Enter the value of B : "; 
+			cin>>b;
 		}
-	
+		int getValue() {
+			return b;
+		}
 };
-
 
 class C : public Dummy {
-	
 	public :
-		
-	int c ;
-	
-	public :
-		
-		void input()
-		{
-			cout<<"Enter the value of C : "; cin>>c;
+		int c ;
+		void input() {
+			cout<<"Enter the value of C : "; 
+			cin>>c;
 		}
-	
+		int getValue() {
+			return c;
+		}
 };
 
-class Output : public A , public B , public C , public Dummy{
-	
+class Output : public A , public B , public C {
 	public :
-		
-		void sum()
-		{
-			cout<<"The sum of A,B and C is : "<<a+b+c;
+		Output(Dummy* D1, Dummy* D2, Dummy* D3) {
+			A::a = D1->getValue();
+			B::b = D2->getValue();
+			C::c = D3->getValue();
 		}
-	
+		void sum() {
+			cout<<"The sum of A, B and C is : "<<A::a+B::b+C::c;
+		}
 };
 
-main(){
-	
+int main() {
 	Dummy *D1 = new A();
 	D1->input();
-	
 	
 	Dummy *D2 = new B();
 	D2->input();
 	
-	
 	Dummy *D3 = new C();
 	D3->input();
 	
-	Dummy *D = new Output();
-	D->sum(); 
+	Output O(D1, D2, D3);
+	O.sum(); 
+	
 }
